@@ -1,0 +1,1337 @@
+{
+  "contractName": "Admin",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a7230582030f7b33fa254a558d0099fadd5871d545724b4ea3f1452b7c9cc4c9afb7ac27c0029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a7230582030f7b33fa254a558d0099fadd5871d545724b4ea3f1452b7c9cc4c9afb7ac27c0029",
+  "sourceMap": "87:48:5:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;87:48:5;;;;;;;",
+  "deployedSourceMap": "87:48:5:-;;;;;",
+  "source": "pragma solidity >= 0.5.0;\r\n\r\n\r\ncontract Candidate {\r\n    Complaint ComplaintObj;\r\n}\r\n\r\ncontract Admin {\r\n    Complaint ComplaintObj;\r\n}\r\n\r\n\r\ncontract Complaint {\r\n    struct ComplaintInfo{\r\n        uint complaintId;\r\n        bytes32 candidateEmail;\r\n        string complain;\r\n        bytes10 status;\r\n\r\n    }\r\n    uint public ComplaintCount;\r\n    \r\n    mapping (uint => ComplaintInfo) public Complaints;\r\n    \r\n    function addComplaint(uint  _complaintId,bytes32 _candidateEmail,string memory _complain,bytes10 _status) public {\r\n        ComplaintCount++;\r\n        Complaints[_complaintId] = ComplaintInfo(_complaintId,_candidateEmail,_complain,_status);\r\n    }\r\n}",
+  "sourcePath": "H:/UNIVERSITY/Project/election-master/contracts/Complaint.sol",
+  "ast": {
+    "absolutePath": "/H/UNIVERSITY/Project/election-master/contracts/Complaint.sol",
+    "exportedSymbols": {
+      "Admin": [
+        624
+      ],
+      "Candidate": [
+        621
+      ],
+      "Complaint": [
+        666
+      ]
+    },
+    "id": 667,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 618,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:25:5"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 621,
+        "linearizedBaseContracts": [
+          621
+        ],
+        "name": "Candidate",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 620,
+            "name": "ComplaintObj",
+            "nodeType": "VariableDeclaration",
+            "scope": 621,
+            "src": "57:22:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Complaint_$666",
+              "typeString": "contract Complaint"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 619,
+              "name": "Complaint",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 666,
+              "src": "57:9:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Complaint_$666",
+                "typeString": "contract Complaint"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 667,
+        "src": "31:52:5"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 624,
+        "linearizedBaseContracts": [
+          624
+        ],
+        "name": "Admin",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 623,
+            "name": "ComplaintObj",
+            "nodeType": "VariableDeclaration",
+            "scope": 624,
+            "src": "109:22:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Complaint_$666",
+              "typeString": "contract Complaint"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 622,
+              "name": "Complaint",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 666,
+              "src": "109:9:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Complaint_$666",
+                "typeString": "contract Complaint"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 667,
+        "src": "87:48:5"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 666,
+        "linearizedBaseContracts": [
+          666
+        ],
+        "name": "Complaint",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Complaint.ComplaintInfo",
+            "id": 633,
+            "members": [
+              {
+                "constant": false,
+                "id": 626,
+                "name": "complaintId",
+                "nodeType": "VariableDeclaration",
+                "scope": 633,
+                "src": "198:16:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 625,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "198:4:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 628,
+                "name": "candidateEmail",
+                "nodeType": "VariableDeclaration",
+                "scope": 633,
+                "src": "225:22:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 627,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "225:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 630,
+                "name": "complain",
+                "nodeType": "VariableDeclaration",
+                "scope": 633,
+                "src": "258:15:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 629,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "258:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 632,
+                "name": "status",
+                "nodeType": "VariableDeclaration",
+                "scope": 633,
+                "src": "284:14:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes10",
+                  "typeString": "bytes10"
+                },
+                "typeName": {
+                  "id": 631,
+                  "name": "bytes10",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "284:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes10",
+                    "typeString": "bytes10"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ComplaintInfo",
+            "nodeType": "StructDefinition",
+            "scope": 666,
+            "src": "167:141:5",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 635,
+            "name": "ComplaintCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 666,
+            "src": "314:26:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 634,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "314:4:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 639,
+            "name": "Complaints",
+            "nodeType": "VariableDeclaration",
+            "scope": 666,
+            "src": "353:49:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ComplaintInfo_$633_storage_$",
+              "typeString": "mapping(uint256 => struct Complaint.ComplaintInfo)"
+            },
+            "typeName": {
+              "id": 638,
+              "keyType": {
+                "id": 636,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "362:4:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "353:31:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ComplaintInfo_$633_storage_$",
+                "typeString": "mapping(uint256 => struct Complaint.ComplaintInfo)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 637,
+                "name": "ComplaintInfo",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 633,
+                "src": "370:13:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_ComplaintInfo_$633_storage_ptr",
+                  "typeString": "struct Complaint.ComplaintInfo"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 664,
+              "nodeType": "Block",
+              "src": "528:134:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 651,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "539:16:5",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 650,
+                      "name": "ComplaintCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 635,
+                      "src": "539:14:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 652,
+                  "nodeType": "ExpressionStatement",
+                  "src": "539:16:5"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 662,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 653,
+                        "name": "Complaints",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 639,
+                        "src": "566:10:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ComplaintInfo_$633_storage_$",
+                          "typeString": "mapping(uint256 => struct Complaint.ComplaintInfo storage ref)"
+                        }
+                      },
+                      "id": 655,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 654,
+                        "name": "_complaintId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 641,
+                        "src": "577:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "566:24:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ComplaintInfo_$633_storage",
+                        "typeString": "struct Complaint.ComplaintInfo storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 657,
+                          "name": "_complaintId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 641,
+                          "src": "607:12:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 658,
+                          "name": "_candidateEmail",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 643,
+                          "src": "620:15:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 659,
+                          "name": "_complain",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 645,
+                          "src": "636:9:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 660,
+                          "name": "_status",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 647,
+                          "src": "646:7:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes10",
+                            "typeString": "bytes10"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_bytes10",
+                            "typeString": "bytes10"
+                          }
+                        ],
+                        "id": 656,
+                        "name": "ComplaintInfo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 633,
+                        "src": "593:13:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_ComplaintInfo_$633_storage_ptr_$",
+                          "typeString": "type(struct Complaint.ComplaintInfo storage pointer)"
+                        }
+                      },
+                      "id": 661,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "593:61:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ComplaintInfo_$633_memory",
+                        "typeString": "struct Complaint.ComplaintInfo memory"
+                      }
+                    },
+                    "src": "566:88:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ComplaintInfo_$633_storage",
+                      "typeString": "struct Complaint.ComplaintInfo storage ref"
+                    }
+                  },
+                  "id": 663,
+                  "nodeType": "ExpressionStatement",
+                  "src": "566:88:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 665,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addComplaint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 648,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 641,
+                  "name": "_complaintId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 665,
+                  "src": "437:18:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 640,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "437:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 643,
+                  "name": "_candidateEmail",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 665,
+                  "src": "456:23:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 642,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "456:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 645,
+                  "name": "_complain",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 665,
+                  "src": "480:23:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 644,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "480:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 647,
+                  "name": "_status",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 665,
+                  "src": "504:15:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes10",
+                    "typeString": "bytes10"
+                  },
+                  "typeName": {
+                    "id": 646,
+                    "name": "bytes10",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "504:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes10",
+                      "typeString": "bytes10"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "436:84:5"
+            },
+            "returnParameters": {
+              "id": 649,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "528:0:5"
+            },
+            "scope": 666,
+            "src": "415:247:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 667,
+        "src": "141:524:5"
+      }
+    ],
+    "src": "0:665:5"
+  },
+  "legacyAST": {
+    "absolutePath": "/H/UNIVERSITY/Project/election-master/contracts/Complaint.sol",
+    "exportedSymbols": {
+      "Admin": [
+        624
+      ],
+      "Candidate": [
+        621
+      ],
+      "Complaint": [
+        666
+      ]
+    },
+    "id": 667,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 618,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:25:5"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 621,
+        "linearizedBaseContracts": [
+          621
+        ],
+        "name": "Candidate",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 620,
+            "name": "ComplaintObj",
+            "nodeType": "VariableDeclaration",
+            "scope": 621,
+            "src": "57:22:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Complaint_$666",
+              "typeString": "contract Complaint"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 619,
+              "name": "Complaint",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 666,
+              "src": "57:9:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Complaint_$666",
+                "typeString": "contract Complaint"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 667,
+        "src": "31:52:5"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 624,
+        "linearizedBaseContracts": [
+          624
+        ],
+        "name": "Admin",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 623,
+            "name": "ComplaintObj",
+            "nodeType": "VariableDeclaration",
+            "scope": 624,
+            "src": "109:22:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Complaint_$666",
+              "typeString": "contract Complaint"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 622,
+              "name": "Complaint",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 666,
+              "src": "109:9:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Complaint_$666",
+                "typeString": "contract Complaint"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 667,
+        "src": "87:48:5"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 666,
+        "linearizedBaseContracts": [
+          666
+        ],
+        "name": "Complaint",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Complaint.ComplaintInfo",
+            "id": 633,
+            "members": [
+              {
+                "constant": false,
+                "id": 626,
+                "name": "complaintId",
+                "nodeType": "VariableDeclaration",
+                "scope": 633,
+                "src": "198:16:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 625,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "198:4:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 628,
+                "name": "candidateEmail",
+                "nodeType": "VariableDeclaration",
+                "scope": 633,
+                "src": "225:22:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 627,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "225:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 630,
+                "name": "complain",
+                "nodeType": "VariableDeclaration",
+                "scope": 633,
+                "src": "258:15:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 629,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "258:6:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 632,
+                "name": "status",
+                "nodeType": "VariableDeclaration",
+                "scope": 633,
+                "src": "284:14:5",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes10",
+                  "typeString": "bytes10"
+                },
+                "typeName": {
+                  "id": 631,
+                  "name": "bytes10",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "284:7:5",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes10",
+                    "typeString": "bytes10"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ComplaintInfo",
+            "nodeType": "StructDefinition",
+            "scope": 666,
+            "src": "167:141:5",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 635,
+            "name": "ComplaintCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 666,
+            "src": "314:26:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 634,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "314:4:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 639,
+            "name": "Complaints",
+            "nodeType": "VariableDeclaration",
+            "scope": 666,
+            "src": "353:49:5",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ComplaintInfo_$633_storage_$",
+              "typeString": "mapping(uint256 => struct Complaint.ComplaintInfo)"
+            },
+            "typeName": {
+              "id": 638,
+              "keyType": {
+                "id": 636,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "362:4:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "353:31:5",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ComplaintInfo_$633_storage_$",
+                "typeString": "mapping(uint256 => struct Complaint.ComplaintInfo)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 637,
+                "name": "ComplaintInfo",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 633,
+                "src": "370:13:5",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_ComplaintInfo_$633_storage_ptr",
+                  "typeString": "struct Complaint.ComplaintInfo"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 664,
+              "nodeType": "Block",
+              "src": "528:134:5",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 651,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "539:16:5",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 650,
+                      "name": "ComplaintCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 635,
+                      "src": "539:14:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 652,
+                  "nodeType": "ExpressionStatement",
+                  "src": "539:16:5"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 662,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 653,
+                        "name": "Complaints",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 639,
+                        "src": "566:10:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_ComplaintInfo_$633_storage_$",
+                          "typeString": "mapping(uint256 => struct Complaint.ComplaintInfo storage ref)"
+                        }
+                      },
+                      "id": 655,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 654,
+                        "name": "_complaintId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 641,
+                        "src": "577:12:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "566:24:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ComplaintInfo_$633_storage",
+                        "typeString": "struct Complaint.ComplaintInfo storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 657,
+                          "name": "_complaintId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 641,
+                          "src": "607:12:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 658,
+                          "name": "_candidateEmail",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 643,
+                          "src": "620:15:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 659,
+                          "name": "_complain",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 645,
+                          "src": "636:9:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 660,
+                          "name": "_status",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 647,
+                          "src": "646:7:5",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes10",
+                            "typeString": "bytes10"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_bytes10",
+                            "typeString": "bytes10"
+                          }
+                        ],
+                        "id": 656,
+                        "name": "ComplaintInfo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 633,
+                        "src": "593:13:5",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_ComplaintInfo_$633_storage_ptr_$",
+                          "typeString": "type(struct Complaint.ComplaintInfo storage pointer)"
+                        }
+                      },
+                      "id": 661,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "593:61:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ComplaintInfo_$633_memory",
+                        "typeString": "struct Complaint.ComplaintInfo memory"
+                      }
+                    },
+                    "src": "566:88:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ComplaintInfo_$633_storage",
+                      "typeString": "struct Complaint.ComplaintInfo storage ref"
+                    }
+                  },
+                  "id": 663,
+                  "nodeType": "ExpressionStatement",
+                  "src": "566:88:5"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 665,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addComplaint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 648,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 641,
+                  "name": "_complaintId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 665,
+                  "src": "437:18:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 640,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "437:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 643,
+                  "name": "_candidateEmail",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 665,
+                  "src": "456:23:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 642,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "456:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 645,
+                  "name": "_complain",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 665,
+                  "src": "480:23:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 644,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "480:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 647,
+                  "name": "_status",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 665,
+                  "src": "504:15:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes10",
+                    "typeString": "bytes10"
+                  },
+                  "typeName": {
+                    "id": 646,
+                    "name": "bytes10",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "504:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes10",
+                      "typeString": "bytes10"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "436:84:5"
+            },
+            "returnParameters": {
+              "id": 649,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "528:0:5"
+            },
+            "scope": 666,
+            "src": "415:247:5",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 667,
+        "src": "141:524:5"
+      }
+    ],
+    "src": "0:665:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-01-09T13:17:06.968Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

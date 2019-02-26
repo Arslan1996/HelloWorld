@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TCMeats | All Orders</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript">
+        function load() {
+            setUserName();
+        }
+    </script>
+</head>
+
+<body onload="load()">
+
+    <div id="wrapper">
+
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span>
+                                <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                            </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs">
+                                        <strong class="font-bold" id="CurrentUserName"></strong>
+                                    </span> <span class="text-muted text-xs block" id="CurrentUserType"><b class="caret"></b></span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="profile.html">Profile</a></li>
+                                <li class="divider"></li>
+                                <li><a href="login.html">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            TCMeats
+                        </div>
+                    </li>
+                    <li class="active">
+                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Home</span></a>
+                    </li>
+                    <li class="active">
+                        <a href="admin_product_list.html"><i class="fa fa-cube"></i> <span class="nav-label">Products</span></a>
+                    </li>
+                    <li class="active">
+                        <a href="admin_all_orders.html"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Orders</span></a>
+                    </li>
+                    <li class="active">
+                        <a href="admin_search.html"><i class="fa fa-search"></i> <span class="nav-label">Search</span></a>
+                    </li>
+                    <li class="active">
+                        <a href="users.html"><i class="fa fa-users"></i> <span class="nav-label">Users</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+ <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message" style="margin-left: -930px;">Welcome to TCMeats Admin Panel</span>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>Orders</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="active">
+                            <strong>Orders</strong>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Orders</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                        <div class="table-responsive">
+                    <table id="orderTable" class="table table-striped table-bordered table-hover dataTables-example" >
+                    <thead>
+                    <tr>
+                        <th>Order #</th>
+                        <th>Delivery Date</th>
+                        <th>Order Date</th>
+                        <th>Item(s)</th>
+                        <th>Line Total</th>
+                        <th>Status</th>
+                        <th>User</th>
+                    </tr>
+                    </thead>
+            <tbody>
+
+            </tbody>
+                        </table>
+                </div>
+            </div>
+            </div>
+        </div>
+                </div>
+
+        </div>
+
+            <div class="modal inmodal fade" id="myModal7" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ibox-content p-xl">
+                                        <div id="Invoice" style="background-color:#fff;">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <h5>Ordered By:</h5>
+                                                    <address>
+                                                        <label id="orderUserName">TCMeats.</label><br>
+                                                    </address>
+                                                </div>
+
+                                                <div class="col-sm-6 text-right">
+                                                    <h4>Order No.</h4>
+                                                    <h4 class="text-navy" id="orderNo">INV-000567F7-00</h4>
+
+                                                    <p>
+                                                        <span><strong>Ordered Date: </strong><label id="odate">23/05/208</label></span><br />
+                                                        <span><strong>Delivery Date: </strong><label id="ddate">24/06/2018</label></span>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="table-responsive m-t">
+                                                <table class="table invoice-table" id="orderInfoTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Code</th>
+                                                            <th>Name</th>
+                                                            <th>Description</th>
+                                                            <th>Price</th>
+                                                            <th>Quantity</th>
+                                                            <th>Line Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div><!-- /table-responsive -->
+
+                                            <table class="table invoice-total">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><strong>GRAND TOTAL :</strong></td>
+                                                        <td id="orderTotal">$1261.98</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="text-left">
+                                            <div class="form-group">
+                                                <label class="col-sm-1 control-label">Status</label>
+
+                                                <div class="col-sm-3">
+                                                    <select class="form-control m-b" id="ostatus">
+                                                        <option value="Pending">Pending</option>
+                                                        <option value="Delivered">Delivered</option>
+                                                        <option value="Invoiced">Invoiced</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        <div class="text-right">
+                                            <button class="btn btn-primary" onclick="viewInvoice()"><i class="fa fa-inverse"></i> View Invoice</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                            <button id="submitButton" type="submit" onclick="updateOrder()" class="btn btn-primary">Save changes</button>
+                        </div>
+                </div>
+
+            </div>
+
+            <div class="footer">
+                <div>
+                    Developed By <strong>Infinity Devs</strong>
+                </div>
+            </div>
+        </div>
+            <div class="modal inmodal fade" id="myModal8" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ibox-content p-xl">
+                                        <div id="Invoice" style="background-color:#fff;">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <h5>From:</h5>
+                                                    <address>
+                                                        <strong>TCMeats.</strong><br>
+                                                        106 Jorg Avenu, 600/10<br>
+                                                        Chicago, VT 32456<br>
+                                                        <abbr title="Phone">P:</abbr> (123) 601-4590
+                                                    </address>
+                                                </div>
+
+                                                <div class="col-sm-6 text-right">
+                                                    <h4>Invoice No.</h4>
+                                                    <h4 class="text-navy" id="invoiceNo">INV-000567F7-00</h4>
+
+                                                    <p>
+                                                        <span><strong>Invoice Date: </strong><label id="iodate">23/05/208</label></span><br />
+                                                        <span><strong>Delivery Date: </strong><label id="iddate">24/06/2018</label></span>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="table-responsive m-t">
+                                                <table class="table invoice-table" id="invoiceTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Code</th>
+                                                            <th>Name</th>
+                                                            <th>Description</th>
+                                                            <th>Price</th>
+                                                            <th>Quantity</th>
+                                                            <th>Line Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div><!-- /table-responsive -->
+
+                                            <table class="table invoice-total">
+                                                <tbody>
+                                                    <tr>
+                                                        <td><strong>INVOICE TOTAL :</strong></td>
+                                                        <td id="invTotal">$1261.98</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="text-right">
+                                            <button class="btn btn-primary" onclick="printInvoice()"><i class="fa fa-print"></i> Print Invoice</button>
+                                        </div>
+
+                                        <div class="well m-t">
+                                            <strong>Comments</strong>
+                                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal inmodal fade" id="myModal1" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="ibox-content p-xl">
+                                        <div style="background-color:#fff;">
+                                            <div class="table-responsive m-t">
+                                                <table class="table invoice-table" id="tempTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Code</th>
+                                                            <th>Name</th>
+                                                            <th>Description</th>
+                                                            <th>Price</th>
+                                                            <th>Quantity</th>
+                                                            <th>Line Total</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div><!-- /table-responsive -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="footer">
+                    <div>
+                        Developed By <strong>Infinity Devs</strong>
+                    </div>
+                </div>
+            </div>
+          </div>
+       </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="js/plugins/dataTables/datatables.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+    <script src="myjs/orders.js"></script>
+    <script src="myjs/profile.js"></script>
+</body>
+
+</html>

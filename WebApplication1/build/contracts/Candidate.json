@@ -1,0 +1,132 @@
+{
+  "contractName": "Candidate",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3fe6080604052600080fdfea165627a7a723058206cb0925407a4646ea115945aef96010e64f77cb21cfef96cd9e6a9b18f25e7e60029",
+  "deployedBytecode": "0x6080604052600080fdfea165627a7a723058206cb0925407a4646ea115945aef96010e64f77cb21cfef96cd9e6a9b18f25e7e60029",
+  "sourceMap": "52:26:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;52:26:0;;;;;;;",
+  "deployedSourceMap": "52:26:0:-;;;;;",
+  "source": "pragma solidity >=0.5.0;\r\n\r\nimport \"./User.sol\";\r\n\r\ncontract Candidate {\r\n\t\r\n}\r\n",
+  "sourcePath": "C:/Users/f1580/Documents/Visual Studio 2015/Projects/WebApplication1/WebApplication1/contracts/Candidate.sol",
+  "ast": {
+    "absolutePath": "/C/Users/f1580/Documents/Visual Studio 2015/Projects/WebApplication1/WebApplication1/contracts/Candidate.sol",
+    "exportedSymbols": {
+      "Candidate": [
+        3
+      ]
+    },
+    "id": 4,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "absolutePath": "/C/Users/f1580/Documents/Visual Studio 2015/Projects/WebApplication1/WebApplication1/contracts/User.sol",
+        "file": "./User.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 4,
+        "sourceUnit": 617,
+        "src": "28:20:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 3,
+        "linearizedBaseContracts": [
+          3
+        ],
+        "name": "Candidate",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 4,
+        "src": "52:26:0"
+      }
+    ],
+    "src": "0:80:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/f1580/Documents/Visual Studio 2015/Projects/WebApplication1/WebApplication1/contracts/Candidate.sol",
+    "exportedSymbols": {
+      "Candidate": [
+        3
+      ]
+    },
+    "id": 4,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "absolutePath": "/C/Users/f1580/Documents/Visual Studio 2015/Projects/WebApplication1/WebApplication1/contracts/User.sol",
+        "file": "./User.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 4,
+        "sourceUnit": 617,
+        "src": "28:20:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 3,
+        "linearizedBaseContracts": [
+          3
+        ],
+        "name": "Candidate",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 4,
+        "src": "52:26:0"
+      }
+    ],
+    "src": "0:80:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xaD71690313aE9E1A6e99b78eE94f8fA610B2e3Dd",
+      "transactionHash": "0xac52dbfb59443b0ea823e29ba480d4d6b84233c279cd4b9aeb66aa682fb665f5"
+    }
+  },
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2019-01-09T19:33:49.090Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
